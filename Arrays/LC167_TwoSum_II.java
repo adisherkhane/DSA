@@ -8,17 +8,18 @@ class Solution {
 
         while(left<right)
         {
+            int sum = numbers[left] + numbers[right];
 
-            if(numbers[left] + numbers[right] == target)
+            if(sum == target)
             {
                 result[0] = left+1;
                 result[1] = right+1;
                 break;
             }
-            if(numbers[left] + numbers[right]>target)
+            if(sum > target)
                right--;
             
-            if(numbers[left] + numbers[right]<target)
+            if(sum < target)
                left++;
         }
         return result;
